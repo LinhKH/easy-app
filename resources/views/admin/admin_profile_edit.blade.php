@@ -14,7 +14,8 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col">
-                        <form novalidate="">
+                        <form novalidate="" method="POST" action="{{route('admin.profile.store')}}" enctype='multipart/form-data'>
+                            @csrf
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
@@ -22,7 +23,7 @@
                                             <div class="col-6">
                                                 <h5>Admin User Name <span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="email" name="email" class="form-control" required="" value="{{$editData->name}}">
+                                                    <input type="text" name="name" class="form-control" required="" value="{{$editData->name}}">
                                                     <div class="help-block"></div>
                                                 </div>
                                             </div>
@@ -40,7 +41,7 @@
                                             <div class="col-6">
                                                 <h5>File Input Field <span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="file" name="file" id="image" class="form-control" required="">
+                                                    <input type="file" id="image" name="profile_photo_path" class="form-control" required="">
                                                     <div class="help-block"></div>
                                                 </div>
                                             </div>
